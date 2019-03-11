@@ -14,6 +14,22 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+# Symlinking
+DIRECTORY=$(cd "$(dirname -- "$0")"; pwd);
+
+link() {
+    echo "${DIRECTORY}/${1}";
+      # Force create/replace the symlink.
+        ln -fs "${DIRECTORY}/${1}" "${HOME}/"
+    }
+
+link ".antigenrc"
+link ".vimrc"
+link ".zshrc"
+link "aliases.sh"
+link "iterm2-settings"
+link "Brewfile"
+
 # Vim configuration
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -23,17 +39,6 @@ chsh -s $(which zsh)
 
 # Install global NPM packages
 npm install --global yarn
-
-
-
-DIRECTORY=$(cd "$(dirname "$0")"; pwd)
-
-link() {
-      # Force create/replace the symlink.
-        ln -fs "${DIRECTORY}/${1}" "${HOME}/${2}"
-    }
-
-link ".antigenrc" ".antigenrc"
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
