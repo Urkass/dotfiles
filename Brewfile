@@ -8,6 +8,6 @@ brew 'node'
 brew 'nvm'
 brew 'yarn'
 
-brew "zsh"
+# brew "zsh"
 brew "antigen"
 brew "python3"
