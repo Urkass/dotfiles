@@ -34,6 +34,8 @@ link "aliases.sh"
 link "iterm2-settings"
 link "Brewfile"
 
+ln -fs "${DIRECTORY}/urkass.zsh-theme" "${HOME}/.oh-my-zsh/themes/"
+
 # Vim configuration
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
